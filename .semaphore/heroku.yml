@@ -9,7 +9,7 @@ blocks:
   - name: Deploy
     task:
       secrets:
-        - name: my-blog-secrets
+        - name: rails-base-secrets
 
       prologue:
         commands:

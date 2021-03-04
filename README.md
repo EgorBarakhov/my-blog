@@ -1,9 +1,6 @@
-# Rails Base
+# My Blog
 
-[![Build Status](https://flatstack.semaphoreci.com/badges/rails-base.svg?key=1e8f53ac-b0b4-4dc7-bf8b-8027aa5a609e)](https://flatstack.semaphoreci.com/projects/rails-base)
-
-Rails Base is the base Rails application template used at Flatstack.
-It's based on Rails 6 and Ruby 2.7
+TODO: Third-party service badge from (https://egorbarakhov.semaphoreci.com/projects/my-blog)
 
 ## Application Gems
 
@@ -51,103 +48,56 @@ It's based on Rails 6 and Ruby 2.7
 * [RSpec](https://github.com/rspec/rspec) for unit testing
 * [Shoulda Matchers](http://github.com/thoughtbot/shoulda-matchers) for common RSpec matchers
 * [Email Spec](https://github.com/bmabey/email-spec) for common matchers for testing emails
+* [SimpleCov](https://github.com/simplecov-ruby/simplecov) for tests coverage
 
 ## Initializers
 
 * `mailer.rb` - setup default hosts for mailer from configuration
 * `requires.rb` - automatically requires everything in lib/ & lib/extensions
 
+## Project description
+
+Intern to Junior web-dev PDP
+
+## Dependencies
+
+* PostgreSQL
+* Ruby >= 2.7.1
+* Rails >= 6.0.3.1
+
+Setup required dependencies from `Brewfile`:
+```bash
+brew tap Homebrew/bundle
+brew bundle
+```
+
+## Quick Start
+
+```bash
+# clone repo
+git clone git@github.com:EgorBarakhov/my-blog.git
+cd my-blog
+
+# run setup script
+bin/setup
+
+# configure ENV variables in .env
+vim .env
+
+# run server on 5000 port
+bin/server
+```
+
 ## Scripts
 
 * `bin/setup` - setup required gems and migrate db if needed
-* `bin/quality` - runs rubocop, brakeman, rails_best_practices and bundle-audit for the app
-* `bin/test` - runs all tests and quality checks
-* `bin/server` - to run server locally
+* `bin/quality` - run brakeman and rails_best_practices for the app
+* `bin/ci` - should be used in the CI to run specs
 
-## Getting Started
+## Staging
 
-### Prepare dependencies
+* https://protected-atoll-70406.herokuapp.com/
 
-Some gems have native extensions.
-You should have GCC installed on your development machine.
-Dependencies will be automatically installed via setup script.
+## Production
 
-* `phantomjs` - to run Javascript unit tests
-* `graphviz` - to generate Entity-Relationship Diagram
-* `node` - JavaScript runtime
-
-### Bootstrap application
-
-1. Clone application as new project with original repository named "rails-base".
-
-   ```bash
-   git clone git://github.com/fs/rails-base.git --origin rails-base [MY-NEW-PROJECT]
-   ```
-
-2. Create your new repo on GitHub and push master into it. Make sure master branch is tracking origin repo.
-
-  ```bash
-  git remote add origin git@github.com:[MY-GITHUB-ACCOUNT]/[MY-NEW-PROJECT].git
-  git push -u origin master
-  ```
-
-3. Run setup script
-
-  ```bash
-  bin/setup
-  ```
-
-4. Run test and quality suits to make sure all dependencies are satisfied and applications works correctly before making changes.
-
-  ```bash
-  bin/test
-  ```
-
-5. Run app
-
-  ```bash
-  bin/server
-  ```
-
-6. Update README
-
-  Do not forget to update application `README.md` file with detailed information based on the
-  existing template.
-
-  ```bash
-  mv doc/README_TEMPLATE.md README.md
-  # update README.md
-  git commit -am "Update README.md"
-  ```
-
-## Deployment
-
-### Heroku
-
-Out of the box Rails Base ready to be deployed to [Heroku.com](http://heroku.com).
-
-* [Heroku Postgres](https://www.heroku.com/postgres) add-on will be used for database.
-* [SendGrid](https://devcenter.heroku.com/articles/sendgrid#ruby-rails) add-on required to be able to send emails.
-* [NewRelic](https://devcenter.heroku.com/articles/newrelic#ruby-installation-and-configuration) add-on could be used to monitor application performance.
-* [Rollbar](https://elements.heroku.com/addons/rollbar) add-on could be used to application errors.
-
-```bash
-heroku create --addons=heroku-postgresql,sendgrid,newrelic,rollbar --remote staging rails-base-example
-heroku config:add HOST="rails-base-example.herokuapp.com" MAILER_SENDER_ADDRESS="noreply@rails-base-example.herokuapp.com" NEW_RELIC_APP_NAME="Rails Base"
-git push staging master
-heroku run rake db:schema:load
-heroku open
-```
-
-### Custom Server
-
-To be able to deploy to your custom server [Cloud66.com](http://cloud66.com) recommended as a provisioning and deployment service.
-Make sure to review and configure `cloud66/manifest.yml` before deployment.
-
-## Credits
-
-Rails Base is maintained by [Timur Vafin](http://github.com/timurvafin).
-It was written by [Flatstack](http://www.flatstack.com) with the help of our
-[contributors](http://github.com/fs/rails-base/contributors).
-
-[<img src="http://www.flatstack.com/logo.svg" width="100"/>](http://www.flatstack.com)
+* WIP

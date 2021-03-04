@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 
 const HelloWorld = ({ name }) => (
   <h2>
-    Hello, 
+    Hello,
+    {` `}
     {name}
     !
   </h2>

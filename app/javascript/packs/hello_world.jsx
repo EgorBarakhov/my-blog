@@ -11,7 +11,7 @@ const HelloWorld = ({ name }) => (
   </h2>
 )
 
-HelloWorld.defaultProps = { name: "World"}
+HelloWorld.defaultProps = { name: "World" }
 
 HelloWorld.propTypes = { name: PropTypes.string }
 

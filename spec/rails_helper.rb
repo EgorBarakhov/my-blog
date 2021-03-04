@@ -5,6 +5,9 @@ require File.expand_path("../config/environment", __dir__)
 require "rspec/rails"
 require "shoulda/matchers"
 require "capybara/email/rspec"
+require "simplecov"
+
+SimpleCov.start
 
 Dir[Rails.root.join("spec", "support", "**", "*.rb")].sort.each { |f| require f }
 

@@ -62,6 +62,7 @@ group :test do
   gem "rspec-its"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
+  gem "simplecov", require: false
   gem "terminal-notifier-guard"
   gem "webmock", require: false
 end
